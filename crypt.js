@@ -1,6 +1,5 @@
 const crypto = require('crypto');
     var password = process.env['CRYPT_PASSWORD'];
-    // var iv = 'kiamdksndn';
     var iv =  Buffer.from(process.env['IV']);
     var ivstring = iv.toString('hex');
     
