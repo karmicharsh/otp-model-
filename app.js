@@ -1,16 +1,4 @@
 
-// DB_PORT=<DB-PORT>
-// DB_NAME=<DB-NAME>
-// DB_HOST=<DB-HOSTNAME>
-// DB_USER=<DB-USER>
-// DB_PASSWORD=<DB-PASSWORD>
-// EMAIL_ADDRESS=<EMAIL-ADDRESS>          
-// EMAIL_PASSWORD=<EMAIL-PASSWORD>
-// AWS_ACCESS_KEY_ID=<AWS-ACCESS-KEY>
-// AWS_SECRET_ACCESS_KEY=<AWS-SECRET-ACCESS-KEY>
-// AWS_REGION=<AWS-REGION>
-// IV=<INITILIZATION-VECTOR>
-// CRYPT_PASSWORD=<CRYPT-PASSWORD>
 
 require('dotenv').config();
 const express = require('express');
@@ -24,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 4500
 
 
-// Getting data in json format
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -40,15 +28,12 @@ var corsOption = {
 };
 app.use(cors(corsOption));
 
-// Using Helmet
 
 app.use(helmet())
 
-// Logger
 
 app.use(logger('common'))
 
-//Setting swagger Documentation
 
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerDefinition = {
