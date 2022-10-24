@@ -5,64 +5,7 @@ const {decode} = require("../middlewares/crypt")
 
 
 
-/**
- * @swagger
- * /verify/otp:
- *   post:
- *     tags:
- *       - OTP
- *     name: Verify OTP
- *     summary: Verify OTP
- *     produces:
- *       - application/json
- *     consumes:
- *       - application/json
- *     parameters:
- *       - name: body
- *         in: body
- *         schema:
- *           type: object
- *           properties:
- *             otp:
- *               type: string
- *             verification_key:
- *               type: string
- *             check:
- *               type: string
- *         required:
- *           - otp
- *           - verification_key
- *           - check
- *     responses:
- *       '200':
- *         description: OTP Matched
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/definitions/VerificationDetails'
- *               type: object
- *               properties:
- *                Status:
- *                  type: string
- *                Details:
- *                  type: string
- *                Check:
- *                  type: string
- *       '400':
- *         description: OTP cannot be verified
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/definitions/Details'
- *               type: object
- *               properties:
- *                Status:
- *                  type: string
- *                Details:
- *                  type: string
- */
 
-// Function to Compares dates (expiration time and current time in our case)
 var dates = {
     convert:function(d) {
         // Converts the date in d to a date-object. The input can be:
