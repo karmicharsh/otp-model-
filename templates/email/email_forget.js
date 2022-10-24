@@ -8,7 +8,7 @@ const message = (otp) =>{
     + `${otp}\n\n`
     + 'This is a auto-generated email. Please do not reply to this email.\n\n'
     + 'Regards\n'
-    + 'Divyansh Agarwals\n\n'
+    + 'Harsh Singh\n\n'
 }
 
 module.exports = {subject_mail, message};
